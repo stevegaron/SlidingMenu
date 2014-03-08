@@ -118,11 +118,10 @@ public class CustomViewBehind extends ViewGroup {
 
 	@Override
 	protected void onLayout(boolean changed, int l, int t, int r, int b) {
-		final int width = r - l;
 		final int height = b - t;
-		mContent.layout(0, 0, width-mWidthOffset, height);
+		mContent.layout(0, 0, mWidthOffset, height);
 		if (mSecondaryContent != null)
-			mSecondaryContent.layout(0, 0, width-mWidthOffset, height);
+			mSecondaryContent.layout(0, 0, mWidthOffset, height);
 	}
 
 	@Override
@@ -130,7 +129,7 @@ public class CustomViewBehind extends ViewGroup {
 		int width = getDefaultSize(0, widthMeasureSpec);
 		int height = getDefaultSize(0, heightMeasureSpec);
 		setMeasuredDimension(width, height);
-		final int contentWidth = getChildMeasureSpec(widthMeasureSpec, 0, width-mWidthOffset);
+		final int contentWidth = getChildMeasureSpec(widthMeasureSpec, 0, mWidthOffset);
 		final int contentHeight = getChildMeasureSpec(heightMeasureSpec, 0, height);
 		mContent.measure(contentWidth, contentHeight);
 		if (mSecondaryContent != null)
