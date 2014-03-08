@@ -19,6 +19,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -421,6 +422,10 @@ public class SlidingMenu extends RelativeLayout {
 		//		mViewBehind.invalidate();
 	}
 
+	public void setTouchTargetSize(int size){
+		mViewBehind.mMarginThreshold = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 
+				size, getResources().getDisplayMetrics());
+	}
 	/**
 	 * Retrieves the current secondary menu (right).
 	 * @return the current menu

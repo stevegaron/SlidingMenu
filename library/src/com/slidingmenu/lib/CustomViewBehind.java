@@ -26,7 +26,7 @@ public class CustomViewBehind extends ViewGroup {
 
 	private View mContent;
 	private View mSecondaryContent;
-	private int mMarginThreshold;
+	public int mMarginThreshold;
 	private int mWidthOffset;
 	private CanvasTransformer mTransformer;
 	private boolean mChildrenEnabled;
